@@ -1,2 +1,2 @@
-cortexutils
-urllib2
+git+https://github.com/TheHive-Project/cortexutils.git@feature/docker
+requests

@@ -3,6 +3,15 @@ kind: pipeline
 name: default
 
 steps:
+  - name: docker test
+    image: plugins/docker
+    settings:
+      username: {from_secret: docker_username}
+      password: {from_secret: docker_password}
+      repo: tooom/fileinfo
+      tags: test
+      dockerfile: analyzers/FileInfo/Dockerfile
+      context: analyzers/FileInfo
 
   - name: build workers for release
     image: tooom/cortex-worker-builder
